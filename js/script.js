@@ -1,4 +1,11 @@
 let timers = [];
+let hr="00";
+let mn="00";
+let sc="00";
+function treplace(idEl) {
+
+}
+
 
 function addTimer() {
     // const name = document.getElementById('timerName').value || 'Unnamed Timer';

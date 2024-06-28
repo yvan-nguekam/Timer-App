@@ -1,9 +1,17 @@
 let timers = [];
-let hr="00";
-let mn="00";
-let sc="00";
-function treplace(idEl) {
+let hr = "00";
+let mn = "00";
+let sc = "00";
 
+function treplace(idEl) {
+    var el = document.getElementById(idEl);
+    alert(el.selectionStart);
+
+    if (el.value.length == 1) {
+
+    } else {
+
+    }
 }
 
 

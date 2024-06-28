@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -47,7 +48,7 @@
           class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
           name="hrs"
           value="00"
-          type="number"
+          type="text"
           maxlength="3"
           id="hours"
         />
@@ -57,7 +58,7 @@
           name="mins"
           value="00"
           maxlength="3"
-          type="number"
+          type="text"
           id="minutes"
         />
         <p class="text-lg">:</p>
@@ -67,8 +68,8 @@
           value="00"
           id="seconds"
           maxlength="3"
-          type="number"
-          oninput="treplace(this.value)"
+          type="text"
+          oninput="treplace('seconds')"
         />
       </div>
       <div class="flex justify-end gap-4">

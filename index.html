@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -47,14 +48,18 @@
           class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
           name="hrs"
           value="00"
+          type="text"
           id="hours"
+          oninput="treplace(this)"
         />
         <p class="text-lg">:</p>
         <input
           class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
           name="mins"
           value="00"
+          type="text"
           id="minutes"
+          oninput="treplace(this)"
         />
         <p class="text-lg">:</p>
         <input
@@ -62,6 +67,8 @@
           name="secs"
           value="00"
           id="seconds"
+          type="text"
+          oninput="treplace(this)"
         />
       </div>
       <div class="flex justify-end gap-4">
@@ -76,7 +83,7 @@
           <div id="timers"></div>
           <!-- <div id="timers" ondrop="drop(event)" ondragover="allowDrop(event)">  -->
         </div>
-            
+
       </div>
     </div>
   </main>

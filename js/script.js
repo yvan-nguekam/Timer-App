@@ -1,5 +1,65 @@
 let timers = [];
 
+function treplace(el) {
+   //  alert(idEl.selectionStart);
+    if (el.selectionStart == 1) {
+        var o = el.value.substring(0, 1);
+        if (isNaN(o)) {
+            el.value = "";
+        } else {
+            if (parseInt(el.value) > 59) {
+                if (parseInt(el.value.substring(0, 2)) > 59) {
+                    el.value = "0" + el.value.substring(0, 1);
+                }
+                else {
+                    el.value = el.value.substring(0, 2);
+                }
+            } else {
+                el.value = el.value.substring(0, 2);
+                el.selectionStart = 1;
+            }
+        }
+    } else {
+        if (el.selectionStart == 2) {
+            var o = el.value.substring(1, 2);
+            if (isNaN(o)) {
+                el.value = el.value.substring(0, 1) + el.value.substring(2, 3);
+            } else {
+                if (parseInt(el.value) > 59) {
+                    if (parseInt(el.value.substring(0, 2)) > 59) {
+                        el.value = el.value.substring(0, 1);
+                    }
+                    else {
+                        el.value = el.value.substring(0, 2);
+                    }
+                } else {
+                    el.value = el.value.substring(0, 2);
+                }
+            }
+            //
+        } else {
+            if (el.selectionStart == 3) {
+                var o = el.value.substring(2, 3);
+                if (isNaN(o)) {
+                    el.value = el.value.substring(0, 2);
+                } else {
+                    if (parseInt(el.value) > 59) {
+                        if (parseInt(el.value.substring(1, 3)) > 59) {
+                            el.value = "0" + o;
+                        }
+                        else {
+                            el.value = el.value.substring(1, 3);
+                        }
+                    } else {
+                        el.value = el.value.substring(1, 3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 function addTimer() {
     // const name = document.getElementById('timerName').value || 'Unnamed Timer';
     const hours = parseInt(document.getElementById('hours').value) || 0;

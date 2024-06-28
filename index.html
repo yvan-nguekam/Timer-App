@@ -49,17 +49,17 @@
           name="hrs"
           value="00"
           type="text"
-          maxlength="3"
           id="hours"
+          oninput="treplace(this)"
         />
         <p class="text-lg">:</p>
         <input
           class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
           name="mins"
           value="00"
-          maxlength="3"
           type="text"
           id="minutes"
+          oninput="treplace(this)"
         />
         <p class="text-lg">:</p>
         <input
@@ -67,9 +67,8 @@
           name="secs"
           value="00"
           id="seconds"
-          maxlength="3"
           type="text"
-          oninput="treplace('seconds')"
+          oninput="treplace(this)"
         />
       </div>
       <div class="flex justify-end gap-4">

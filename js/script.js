@@ -1,16 +1,61 @@
 let timers = [];
-let hr = "00";
-let mn = "00";
-let sc = "00";
 
-function treplace(idEl) {
-    var el = document.getElementById(idEl);
-    alert(el.selectionStart);
-
-    if (el.value.length == 1) {
-
+function treplace(el) {
+   //  alert(idEl.selectionStart);
+    if (el.selectionStart == 1) {
+        var o = el.value.substring(0, 1);
+        if (isNaN(o)) {
+            el.value = "";
+        } else {
+            if (parseInt(el.value) > 59) {
+                if (parseInt(el.value.substring(0, 2)) > 59) {
+                    el.value = "0" + el.value.substring(0, 1);
+                }
+                else {
+                    el.value = el.value.substring(0, 2);
+                }
+            } else {
+                el.value = el.value.substring(0, 2);
+                el.selectionStart = 1;
+            }
+        }
     } else {
-
+        if (el.selectionStart == 2) {
+            var o = el.value.substring(1, 2);
+            if (isNaN(o)) {
+                el.value = el.value.substring(0, 1) + el.value.substring(2, 3);
+            } else {
+                if (parseInt(el.value) > 59) {
+                    if (parseInt(el.value.substring(0, 2)) > 59) {
+                        el.value = el.value.substring(0, 1);
+                    }
+                    else {
+                        el.value = el.value.substring(0, 2);
+                    }
+                } else {
+                    el.value = el.value.substring(0, 2);
+                }
+            }
+            //
+        } else {
+            if (el.selectionStart == 3) {
+                var o = el.value.substring(2, 3);
+                if (isNaN(o)) {
+                    el.value = el.value.substring(0, 2);
+                } else {
+                    if (parseInt(el.value) > 59) {
+                        if (parseInt(el.value.substring(1, 3)) > 59) {
+                            el.value = "0" + o;
+                        }
+                        else {
+                            el.value = el.value.substring(1, 3);
+                        }
+                    } else {
+                        el.value = el.value.substring(1, 3);
+                    }
+                }
+            }
+        }
     }
 }
 

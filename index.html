@@ -4,17 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-style: normal;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .timer {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+    }
+    .timer input {
+      margin: 0 5px;
+    }
+  </style>
 </head>
-<body>
-    <h1>Timer App</h1>
-    <div>
-        <input type="text" id="timerName" placeholder="Timer Name">
-        <input type="number" id="hours" placeholder="Hours" min="0">
-        <input type="number" id="minutes" placeholder="Minutes" min="0" max="59">
-        <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
-        <button onclick="addTimer()">Add Timer</button>
+<body class="h-full">
+  <main class="mx-auto flex min-h-full max-w-3xl flex-col gap-8 p-4">
+    <div
+      class="mx-auto w-fit rounded-md bg-base-200 px-4 py-2 text-lg font-bold text-base-content"
+    >
+      Timer App
     </div>
-    <div id="timers"></div>
+    <div class="mx-auto flex w-fit flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <p class="flex-1 text-center text-neutral-content">hr</p>
+        <p class="flex-1 text-center text-neutral-content">min</p>
+        <p class="flex-1 text-center text-neutral-content">sec</p>
+      </div>
+      <div
+        class="flex items-center rounded-md border border-neutral bg-base-200 p-2"
+      >
+        <!-- <input type="text" id="timerName" placeholder="Timer Name" /> -->
+        <!-- <p class="text-lg">:</p> -->
+        <input
+          class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
+          name="hrs"
+          value="00"
+          id="hours"
+        />
+        <p class="text-lg">:</p>
+        <input
+          class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
+          name="mins"
+          value="00"
+          id="minutes"
+        />
+        <p class="text-lg">:</p>
+        <input
+          class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
+          name="secs"
+          value="00"
+          id="seconds"
+        />
+      </div>
+      <div class="flex justify-end gap-4">
+        <button class="btn btn-success" onclick="addTimer()">
+          Add Timer
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+      <div class="m-auto size-fit" style="opacity: 1; transform: none; transform-origin: 50% 50% 0px;">
+        <div class="relative flex size-[224px] flex-col gap-2 rounded-2xl bg-base-200 p-4">
+          <div id="timers"></div>
+          <!-- <div id="timers" ondrop="drop(event)" ondragover="allowDrop(event)">  -->
+        </div>
+            
+      </div>
+    </div>
+  </main>
   <script src="./js/script.js"></script>
+  <script>
+
+  </script>
 </body>
 </html>

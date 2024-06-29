@@ -18,7 +18,7 @@ function treplace(el) {
     if (el.selectionStart == 1) {
         var o = el.value.substring(0, 1);
         if (isNaN(o)) {
-            el.value = "";
+            el.value = el.value.substring(1, 3);
         } else {
             if (parseInt(el.value) > 59) {
                 if (parseInt(el.value.substring(0, 2)) > 59) {

@@ -1,0 +1,22 @@
+{
+  "name": "timer-app",
+  "version": "1.0.0",
+  "description": "A simple timer app",
+  "main": "index.html",
+  "scripts": {
+    "cy:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yvan-nguekam/Timer-App.git"
+  },
+  "author": "yvan-nguekam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yvan-nguekam/Timer-App/issues"
+  },
+  "homepage": "https://github.com/yvan-nguekam/Timer-App#readme",
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  }
+}

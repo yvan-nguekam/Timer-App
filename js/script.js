@@ -195,14 +195,18 @@ function deleteTimer(id) {
 
 function renderTimers() {
     const timersContainer = document.getElementById('timers');
-    timersContainer.innerHTML = '';
+    timersContainer.innerHTML = ``;
     timers.forEach(timer => {
         const timerElement = document.createElement('div');
         timerElement.className = 'timer';
         timerElement.innerHTML = `
-            <div class="relative flex size-full flex-col items-center justify-center gap-1">${timer.name}: ${formatTime(timer.remainingSeconds)}</div>
-            <button class="absolute bottom-3 right-3 flex size-7 items-center justify-center rounded-full p-0 bg-success text-success-content" onclick="pauseTimer(${timer.id})">${timer.isPaused ? 'Play' : 'Pause'}</button>
-            <button class="absolute bottom-3 left-3 flex size-7 items-center justify-center rounded-full bg-base-300 p-0 text-base-content" onclick="deleteTimer(${timer.id})">Delete</button>
+            <div class="m-auto size-fit" style="opacity: 1; transform: none; transform-origin: 50% 50% 0px;">
+            <div class="relative flex size-[224px] flex-col gap-2 rounded-2xl bg-base-200 p-4">
+            <div class="relative flex size-full flex-col items-center justify-center gap-1">${timer.name}: ${formatTime(timer.remainingSeconds)}</div>   
+            <button class="absolute bottom-3 right-3 flex size-14 items-center justify-center rounded-full p-0 bg-success text-success-content" onclick="pauseTimer(${timer.id})">${timer.isPaused ? 'Play' : 'Pause'}</button>
+            <button class="absolute bottom-3 left-3 flex size-14 items-center justify-center rounded-full bg-base-300 p-0 text-base-content" onclick="deleteTimer(${timer.id})">Delete</button>
+            </div>
+            </div>
         `;
         timersContainer.appendChild(timerElement);
     });

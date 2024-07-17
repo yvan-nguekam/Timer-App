@@ -35,11 +35,11 @@
 </head>
 
 <body class="h-full dark:bg-gray-900 bg-white">
-  <main class="mx-auto flex min-h-full max-w-3xl flex-col gap-8 p-4">
-    <div class="mx-auto w-fit rounded-md bg-base-200 px-4 py-2 text-lg font-bold text-base-content">
+  <main class="mx-auto flex min-h-full max-w-4xl flex-col gap-8 p-4">
+    <div class="mx-auto w-fit rounded-md bg-base-200 px-4 py-2 text-lg font-bold text-base-content dark:text-white">
       Timer App
     </div>
-    <div class="mx-auto flex w-fit flex-col gap-2">
+    <div class="mx-auto flex w-fit text-gray dark:text-white flex-col gap-4">
       <div class="flex items-center justify-between">
         <p class="flex-1 text-center text-neutral-content">hr</p>
         <p class="flex-1 text-center text-neutral-content">min</p>
@@ -60,27 +60,27 @@
           class="h-24 w-20 rounded-md bg-base-200 text-center text-5xl focus:bg-accent focus:text-accent-content focus:outline-none md:h-20 md:w-32 md:text-6xl lg:h-32 lg:w-40 lg:text-8xl"
           name="secs" value="00" id="seconds" type="text" oninput="treplace(this)" />
       </div>
-      <div class="flex gap-x-4 flex-row">
+      <div class="flex gap-x-4 dark:text-white flex-row">
         <div class="basis-1/2 flex">
           <button class="btn btn-success" onclick="setD()">
             Settings
           </button>
         </div>
         <div class="basis-1/2 flex justify-end">
-          <button class="btn" onclick="addTimer()">
+          <button class="btn btn-success" onclick="addTimer()">
             Add Timer
           </button>
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
-      <div class="m-auto size-fit" style="opacity: 1; transform: none; transform-origin: 50% 50% 0px;">
-        <div class="relative flex size-[224px] flex-col gap-2 rounded-2xl bg-base-200 p-4">
-          <div id="timers"></div>
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 dark:text-white rounded-full" id="timers">
+      <!-- <div class="m-auto size-fit" style="opacity: 1; transform: none; transform-origin: 50% 50% 0px;"> -->
+        <!-- <div class="relative flex size-[224px] flex-row gap-2 rounded-2xl bg-base-200 p-4"> -->
+          <!-- <div class="flex flex-wrap" id="timers"></div> -->
           <!-- <div id="timers" ondrop="drop(event)" ondragover="allowDrop(event)">  -->
-        </div>
+        <!-- </div> -->
 
-      </div>
+      <!-- </div> -->
     </div>
     <!-- The Modal -->
     <div id="smodal" class="hidden fixed w-full h-full overflow-auto left-0 top-0 bg-black bg-black/40 modal">
@@ -94,10 +94,10 @@
         <div class="flex flex-row gap-x-4 items-center pl-4">
           <p>Dark Mode</p>
           <button
-            class="w-20 h-10 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+            class="w-14 rounded-full ring-1 ring-slate-700/10  bg-white flex items-center transition duration-300 focus:outline-none shadow-md"
             onclick="switchTheme()">
             <div id="switch-toggle"
-              class="w-6 h-6 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white">
+              class="w-6 h-6 relative mx-2 rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white">
             </div>
           </button>
         </div>

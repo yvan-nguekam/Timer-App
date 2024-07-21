@@ -17,5 +17,12 @@ describe('Timer App treplace Function', () => {
 
     cy.get('#seconds').clear().type('50').blur();
     cy.get('#seconds').should('have.value', '50');
+
+    cy.get('#seconds').clear().type('10').type('{leftArrow}5').blur();
+    cy.get('#seconds').should('have.value', '15');
+
+    cy.get('#seconds').clear().type('10').type('{leftArrow}5').type('{leftArrow}c').blur();
+    cy.get('#seconds').should('have.value', '15');
+
   });
 });
